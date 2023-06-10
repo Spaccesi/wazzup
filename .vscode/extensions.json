@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "dart-code.flutter",
+    "localizely.flutter-intl",
+    "robert-brunhage.flutter-riverpod-snippets",
+    "esbenp.prettier-vscode",
+    "jeroen-meijer.pubspec-assist",
+    "diemasmichiels.emulate",
+    "dart-code.dart-code",
+    "github.vscode-github-actions",
+    "pkief.material-icon-theme",
+    "gruntfuggly.todo-tree",
+    "usernamehw.errorlens"
+  ]
+}

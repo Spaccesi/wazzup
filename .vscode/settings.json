@@ -1,0 +1,19 @@
+{
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true,
+        "source.fixAll": true
+    },
+    "files.exclude": {
+        "**/*.g.dart": true,
+        "**/*.freezed.dart": true
+    },
+    "workbench.statusBar.visible": true,
+    "workbench.tips.enabled": true,
+    "workbench.editor.scrollToSwitchTabs": false
+    // "editor.defaultFormatter": "esbenp.prettier-vscode",
+    // "[dart]": {
+    //     "editor.defaultFormatter": "esbenp.prettier-vscode"
+    // }
+}
