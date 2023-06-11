@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart' show BuildContext;
 import 'package:go_router/go_router.dart';
 
-import '../app_routes.dart';
+import '../../constants/app_routes.dart';
 
 extension CurrentRoute on BuildContext {
   get currentRoute => GoRouter.of(this).location;

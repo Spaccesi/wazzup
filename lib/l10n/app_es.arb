@@ -1,5 +1,6 @@
 {
   "hello_world": "¡Hola Mundo!",
   "signInWithGoogle": "Sign in con Google",
-  "appTitle": "WazzUp!"
+  "appTitle": "WazzUp!",
+  "wellcomeToWazzUp": "Bienvenido a WazzUp!"
 }

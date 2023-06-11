@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:wazzup/modules/auth/controller/auth_controller_provider.dart';
+
+import 'auth/controller/auth_controller.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -75,6 +79,17 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            Consumer(
+              builder: (context, ref, child) => ElevatedButton(
+                onPressed: () =>
+                    ref.read(authControllerProvider.notifier).signOut(),
+                child: const Text('Logout'),
+              ),
+            ),
+            Consumer(
+              builder: (context, ref, child) =>
+                  Text(ref.read(userProvider)!.name),
             ),
           ],
         ),

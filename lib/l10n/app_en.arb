@@ -4,5 +4,6 @@
     "description": "The conventional newborn programmer greeting"
   },
   "signInWithGoogle": "Sign in with Google",
-  "appTitle": "WazzUp!"
+  "appTitle": "WazzUp!",
+  "wellcomeToWazzUp": "Wellcome to WazzUp!"
 }
