@@ -11,7 +11,7 @@ class App extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final routers = ref.watch(routerProvider);
+    final routers = ref.watch(routerProvider(ref));
     return MaterialApp.router(
       onGenerateTitle: (context) => context.loc.appTitle,
       localizationsDelegates:
