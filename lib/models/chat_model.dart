@@ -2,6 +2,7 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:wazzup/models/message_model.dart';
 import 'package:wazzup/models/profile_model.dart';
 
 part 'chat_model.freezed.dart';
@@ -17,6 +18,7 @@ abstract class ChatModel implements _$ChatModel {
     required List<String> memberIds,
     required List<ProfileModel> caches,
     required DateTime createdAt,
+    MessageModel? lastMessage,
   }) = _ChatModel;
 
   Map<String, dynamic> toMap() {
@@ -25,8 +27,9 @@ abstract class ChatModel implements _$ChatModel {
       'photo': photo,
       'isGroup': isGroup,
       'memberIds': memberIds,
-      'caches': caches.map((x) => x.toMap()).toList(),
+      'caches': caches.map((x) => x.toCache()).toList(),
       'createdAt': Timestamp.fromDate(createdAt),
+      'lastMessage': lastMessage?.toMap(),
     };
   }
 
@@ -40,10 +43,11 @@ abstract class ChatModel implements _$ChatModel {
       memberIds: List<String>.from(map['memberIds']),
       caches: List<ProfileModel>.from(
         map['caches'].map<ProfileModel>(
-          (x) => ProfileModel.fromMap(x),
+          (x) => ProfileModel.fromCache(x),
         ),
       ),
       createdAt: (map['createdAt'] as Timestamp).toDate(),
+      lastMessage: map['lastMessage'],
     );
   }
 }

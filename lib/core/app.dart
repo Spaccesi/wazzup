@@ -4,7 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart'
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:wazzup/core/router/routes.dart';
 import 'package:wazzup/core/theme/theme.dart';
-import 'package:wazzup/l10n/shared/localizations_extension.dart';
+import 'package:wazzup/l10n/helpers/localizations_extension.dart';
 
 class App extends ConsumerWidget {
   const App({super.key});

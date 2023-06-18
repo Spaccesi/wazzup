@@ -5,5 +5,32 @@
   },
   "signInWithGoogle": "Sign in with Google",
   "appTitle": "WazzUp!",
-  "wellcomeToWazzUp": "Wellcome to WazzUp!"
+  "wellcomeToWazzUp": "Wellcome to WazzUp!",
+  "chats": "Chats",
+  "status": "Status",
+  "calls": "Calls",
+  "communities": "Communities",
+  "somethingWentWrong": "Something went wrong!",
+  "newGroup": "New group",
+  "newBroadcast": "New broadcast",
+  "linkedDevices": "Linked devices",
+  "starredMessages": "Starred messages",
+  "settings": "Settings",
+  "contacts": "Contacts",
+  "inviteAFriend": "Invite a friend",
+  "refresh": "Refresh",
+  "help": "Help",
+  "selectAContact": "Select a contact",
+  "newContact": "New contact",
+  "newCommunity": "New community",
+  "ok": "OK",
+  "myStatus": "My status",
+  "tapToAddStatusUpdate": "Tap to add status update",
+  "yourStatusUpdatesAre": "Your status updates are ",
+  "endToEndEncrypted": "end-to-end encrypted",
+  "createCallLink": "Create call link",
+  "shareALinkForYourWazzUpCall": "Share a link for your WazzUp call",
+  "toStartCallingContacts": "To start calling contacts who have WazzUp, you will need to keep waiting because this feature is not implemented. Sorry."
+  
+
 }

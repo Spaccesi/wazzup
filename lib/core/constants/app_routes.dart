@@ -16,7 +16,17 @@ enum AppRoute {
   ),
   createChat(
     path: '/chat/new',
+    name: 'CHAT_GROUP_CREATE',
+    title: 'Chat',
+  ),
+  createGroupChat(
+    path: '/chat/group',
     name: 'CHAT_CREATE',
+    title: 'Chat',
+  ),
+  creatingChat(
+    path: '/chat/creating',
+    name: 'CHAT_CREATING',
     title: 'Chat',
   ),
   updateChat(
