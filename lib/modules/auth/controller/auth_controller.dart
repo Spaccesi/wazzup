@@ -9,27 +9,27 @@ import 'auth_controller_provider.dart';
 
 final authControllerProvider = StateNotifierProvider<AuthController, bool>(
   (ref) => AuthController(
-    authRepository: ref.watch(authRepositoryProvider),
+    authService: ref.watch(authServiceProvider),
     ref: ref,
   ),
 );
 
 class AuthController extends StateNotifier<bool> {
-  final AuthRepository _authRepository;
+  final AuthService _authService;
   final Ref _ref;
 
   AuthController({
-    required AuthRepository authRepository,
+    required AuthService authService,
     required Ref ref,
-  })  : _authRepository = authRepository,
+  })  : _authService = authService,
         _ref = ref,
         super(false);
 
-  Stream<User?> get authStateChange => _authRepository.authStateChange;
+  Stream<User?> get authStateChange => _authService.authStateChange;
 
   void signInWithGoogle(BuildContext context) async {
     state = true;
-    final user = await _authRepository.signInWithGoogle();
+    final user = await _authService.signInWithGoogle();
     state = false;
     user.fold(
       (l) => showSnackBar(context, l.message),
@@ -45,13 +45,13 @@ class AuthController extends StateNotifier<bool> {
   }
 
   Stream<ProfileModel> getUserData(String uid) {
-    return _authRepository.getUserData(uid);
+    return _authService.getUserData(uid);
   }
 
   void signInWithEmailAndLink(String email) {}
 
   Future signOut() async {
-    _authRepository.logOut();
+    _authService.logOut();
     _ref.read(userProvider.notifier).update((state) => state = null);
   }
 }

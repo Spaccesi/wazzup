@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:wazzup/l10n/shared/localizations_extension.dart';
+import 'package:wazzup/l10n/helpers/localizations_extension.dart';
 
 import '../widgets/sign_in_with_google.dart';
 

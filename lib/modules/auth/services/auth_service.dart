@@ -11,15 +11,15 @@ import 'package:wazzup/firebase/firebase_provider.dart';
 
 import '../../../models/profile_model.dart';
 
-final authRepositoryProvider = Provider<AuthRepository>(
-  (ref) => AuthRepository(
+final authServiceProvider = Provider<AuthService>(
+  (ref) => AuthService(
     firestore: ref.read(firestoreProvider),
     auth: ref.read(authProvider),
     googleSignIn: ref.read(googleSignInProvider),
   ),
 );
 
-class AuthRepository {
+class AuthService {
   final FirebaseFirestore _firestore;
   final FirebaseAuth _auth;
   final GoogleSignIn _googleSignIn;
@@ -29,7 +29,7 @@ class AuthRepository {
 
   Stream<User?> get authStateChange => _auth.authStateChanges();
 
-  AuthRepository({
+  AuthService({
     required FirebaseFirestore firestore,
     required FirebaseAuth auth,
     required GoogleSignIn googleSignIn,
