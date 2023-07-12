@@ -22,16 +22,19 @@ class ProfileService {
         FirebaseConstants.profilesCollection,
       );
 
-  Stream<List<ProfileModel>> getAll() {
-    final profiles = _profiles.snapshots().map(
-          (snapshot) => snapshot.docs
-              .map((profile) => ProfileModel.fromMap(profile))
-              .toList(),
-        );
-    // TODO: Pagination
-    // .limit(10)
-    // .orderBy("updatedAt", descending: true)
-
+  Future<List<ProfileModel>> getAll({
+    ProfileModel? lastProfile,
+    int limit = 5,
+    // String? searching,
+  }) async {
+    var docRef = _profiles.orderBy("name", descending: false);
+    // if(searching != null) {
+    // }
+    if (lastProfile != null) {
+      docRef = docRef.startAfter([lastProfile.name]);
+    }
+    final profiles = await docRef.limit(limit).get().then(
+        (value) => value.docs.map((e) => ProfileModel.fromMap(e)).toList());
     return profiles;
   }
 
